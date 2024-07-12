@@ -1,4 +1,3 @@
-
 encoding_model: cl100k_base
 skip_workflows: []
 llm:
@@ -45,14 +44,12 @@ embeddings:
     # batch_size: 16 # the number of documents to send in a single request
     # batch_max_tokens: 8191 # the maximum number of tokens to send in a single request
     # target: required # or optional
-  
-
 
 chunks:
   size: 300
   overlap: 100
   group_by_columns: [id] # by default, we don't allow chunks to cross documents
-    
+
 input:
   type: file # or blob
   file_type: text # or csv
@@ -83,7 +80,7 @@ entity_extraction:
   ## parallelization: override the global parallelization settings for this task
   ## async_mode: override the global async_mode settings for this task
   prompt: "prompts/entity_extraction.txt"
-  entity_types: [organization,person,geo,event]
+  entity_types: [animal, tool, activity, location]
   max_gleanings: 0
 
 summarize_descriptions:
@@ -109,6 +106,11 @@ community_report:
   prompt: "prompts/community_report.txt"
   max_length: 2000
   max_input_length: 8000
+
+parallelization:
+  max_concurrent_docs: 2  # Adjust based on available system resources
+  max_concurrent_tasks: 4  # Adjust based on available system resources
+  async_mode: true  # Whether to use asynchronous processing
 
 cluster_graph:
   max_cluster_size: 10
