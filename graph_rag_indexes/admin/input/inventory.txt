@@ -1,0 +1,54 @@
+Lizard Food Inventory
+Crickets: 10,000 crickets
+Consumption: 50 crickets per day per lizard
+Duration: 200 days for one lizard
+Mealworms: 5,000 mealworms
+Consumption: 25 mealworms per day per lizard
+Duration: 200 days for one lizard
+Collard Greens: 50 kg
+Consumption: 0.25 kg per day per lizard
+Duration: 200 days for one lizard
+Mustard Greens: 50 kg
+Consumption: 0.25 kg per day per lizard
+Duration: 200 days for one lizard
+Dandelion Leaves: 50 kg
+Consumption: 0.25 kg per day per lizard
+Duration: 200 days for one lizard
+Roaches: 2,000 roaches
+Consumption: 10 roaches per day per lizard
+Duration: 200 days for one lizard
+Waxworms: 5,000 waxworms
+Consumption: 25 waxworms per day per lizard
+Duration: 200 days for one lizard
+Velociraptor Food Inventory
+Raw Meat Chunks: 2,000 kg
+Consumption: 10 kg per day per velociraptor
+Duration: 200 days for one velociraptor
+Bone Marrow: 400 kg
+Consumption: 2 kg per day per velociraptor
+Duration: 200 days for one velociraptor
+Live Prey (Rabbits/Birds): 600 units
+Consumption: 3 units per day per velociraptor
+Duration: 200 days for one velociraptor
+Organ Meats: 400 kg
+Consumption: 2 kg per day per velociraptor
+Duration: 200 days for one velociraptor
+Dragon Food Inventory
+Large Game Meat (Deer/Wild Boar): 12,000 kg
+Consumption: 20 kg per day per dragon
+Duration: 200 days for one dragon
+Fish: 2,000 kg
+Consumption: 10 kg per day per dragon
+Duration: 200 days for one dragon
+Reptiles: 1,000 units
+Consumption: 5 units per day per dragon
+Duration: 200 days for one dragon
+Mineral Supplements: 600 kg
+Consumption: 3 kg per day per dragon
+Duration: 200 days for one dragon
+Large Birds: 600 units
+Consumption: 3 units per day per dragon
+Duration: 200 days for one dragon
+Fire-Resistant Plants: 600 kg
+Consumption: 3 kg per day per dragon
+Duration: 200 days for one dragon

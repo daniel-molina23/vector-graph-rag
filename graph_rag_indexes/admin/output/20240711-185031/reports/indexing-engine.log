@@ -1,0 +1,478 @@
+18:50:31,525 graphrag.config.read_dotenv INFO Loading pipeline .env file
+18:50:31,533 graphrag.index.cli INFO using default configuration: {
+    "llm": {
+        "api_key": "REDACTED, length 56",
+        "type": "openai_chat",
+        "model": "gpt-4-turbo-preview",
+        "max_tokens": 4000,
+        "request_timeout": 180.0,
+        "api_base": null,
+        "api_version": null,
+        "proxy": null,
+        "cognitive_services_endpoint": null,
+        "deployment_name": null,
+        "model_supports_json": true,
+        "tokens_per_minute": 0,
+        "requests_per_minute": 0,
+        "max_retries": 10,
+        "max_retry_wait": 10.0,
+        "sleep_on_rate_limit_recommendation": true,
+        "concurrent_requests": 25
+    },
+    "parallelization": {
+        "stagger": 0.3,
+        "num_threads": 50
+    },
+    "async_mode": "threaded",
+    "root_dir": "admin",
+    "reporting": {
+        "type": "file",
+        "base_dir": "output/${timestamp}/reports",
+        "storage_account_blob_url": null
+    },
+    "storage": {
+        "type": "file",
+        "base_dir": "output/${timestamp}/artifacts",
+        "storage_account_blob_url": null
+    },
+    "cache": {
+        "type": "file",
+        "base_dir": "cache",
+        "storage_account_blob_url": null
+    },
+    "input": {
+        "type": "file",
+        "file_type": "text",
+        "base_dir": "input",
+        "storage_account_blob_url": null,
+        "encoding": "utf-8",
+        "file_pattern": ".*\\.txt$",
+        "file_filter": null,
+        "source_column": null,
+        "timestamp_column": null,
+        "timestamp_format": null,
+        "text_column": "text",
+        "title_column": null,
+        "document_attribute_columns": []
+    },
+    "embed_graph": {
+        "enabled": false,
+        "num_walks": 10,
+        "walk_length": 40,
+        "window_size": 2,
+        "iterations": 3,
+        "random_seed": 597832,
+        "strategy": null
+    },
+    "embeddings": {
+        "llm": {
+            "api_key": "REDACTED, length 56",
+            "type": "openai_embedding",
+            "model": "text-embedding-3-small",
+            "max_tokens": 4000,
+            "request_timeout": 180.0,
+            "api_base": null,
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": null,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "batch_size": 16,
+        "batch_max_tokens": 8191,
+        "target": "required",
+        "skip": [],
+        "vector_store": null,
+        "strategy": null
+    },
+    "chunks": {
+        "size": 300,
+        "overlap": 100,
+        "group_by_columns": [
+            "id"
+        ],
+        "strategy": null
+    },
+    "snapshots": {
+        "graphml": false,
+        "raw_entities": false,
+        "top_level_nodes": false
+    },
+    "entity_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 56",
+            "type": "openai_chat",
+            "model": "gpt-4-turbo-preview",
+            "max_tokens": 4000,
+            "request_timeout": 180.0,
+            "api_base": null,
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/entity_extraction.txt",
+        "entity_types": [
+            "diet",
+            "training_schedule",
+            "training_location",
+            "trainer_requirements",
+            "training_frequency",
+            "sleep_schedule",
+            "harnessing_powers",
+            "trainer_preparation",
+            "capture_manual"
+        ],
+        "max_gleanings": 0,
+        "strategy": null
+    },
+    "summarize_descriptions": {
+        "llm": {
+            "api_key": "REDACTED, length 56",
+            "type": "openai_chat",
+            "model": "gpt-4-turbo-preview",
+            "max_tokens": 4000,
+            "request_timeout": 180.0,
+            "api_base": null,
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "prompts/summarize_descriptions.txt",
+        "max_length": 500,
+        "strategy": null
+    },
+    "community_reports": {
+        "llm": {
+            "api_key": "REDACTED, length 56",
+            "type": "openai_chat",
+            "model": "gpt-4-turbo-preview",
+            "max_tokens": 4000,
+            "request_timeout": 180.0,
+            "api_base": null,
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": null,
+        "max_length": 2000,
+        "max_input_length": 8000,
+        "strategy": null
+    },
+    "claim_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 56",
+            "type": "openai_chat",
+            "model": "gpt-4-turbo-preview",
+            "max_tokens": 4000,
+            "request_timeout": 180.0,
+            "api_base": null,
+            "api_version": null,
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": null,
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "enabled": false,
+        "prompt": "prompts/claim_extraction.txt",
+        "description": "Any claims or facts that could be relevant to information discovery.",
+        "max_gleanings": 0,
+        "strategy": null
+    },
+    "cluster_graph": {
+        "max_cluster_size": 10,
+        "strategy": null
+    },
+    "umap": {
+        "enabled": false
+    },
+    "local_search": {
+        "text_unit_prop": 0.5,
+        "community_prop": 0.1,
+        "conversation_history_max_turns": 5,
+        "top_k_entities": 10,
+        "top_k_relationships": 10,
+        "max_tokens": 12000,
+        "llm_max_tokens": 2000
+    },
+    "global_search": {
+        "max_tokens": 12000,
+        "data_max_tokens": 12000,
+        "map_max_tokens": 1000,
+        "reduce_max_tokens": 2000,
+        "concurrency": 32
+    },
+    "encoding_model": "cl100k_base",
+    "skip_workflows": []
+}
+18:50:31,536 graphrag.index.create_pipeline_config INFO skipping workflows 
+18:50:31,557 graphrag.index.run INFO Running pipeline
+18:50:31,557 graphrag.index.storage.file_pipeline_storage INFO Creating file storage at admin/output/20240711-185031/artifacts
+18:50:31,558 graphrag.index.input.load_input INFO loading input from root_dir=input
+18:50:31,558 graphrag.index.input.load_input INFO using file storage for input
+18:50:31,559 graphrag.index.storage.file_pipeline_storage INFO search admin/input for files matching .*\.txt$
+18:50:31,560 graphrag.index.input.text INFO found text files from input, found [('dragon_training.txt', {}), ('inventory.txt', {})]
+18:50:31,567 graphrag.index.workflows.load INFO Workflow Run Order: ['create_base_text_units', 'create_base_extracted_entities', 'create_summarized_entities', 'create_base_entity_graph', 'create_final_entities', 'create_final_nodes', 'create_final_communities', 'join_text_units_to_entity_ids', 'create_final_relationships', 'join_text_units_to_relationship_ids', 'create_final_community_reports', 'create_final_text_units', 'create_base_documents', 'create_final_documents']
+18:50:31,567 graphrag.index.run INFO Final # of rows loaded: 2
+18:50:31,701 graphrag.index.run INFO Running workflow: create_base_text_units...
+18:50:31,701 graphrag.index.run INFO dependencies for create_base_text_units: []
+18:50:31,709 datashaper.workflow.workflow INFO executing verb orderby
+18:50:31,724 datashaper.workflow.workflow INFO executing verb zip
+18:50:31,733 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:50:31,751 datashaper.workflow.workflow INFO executing verb chunk
+18:50:31,962 datashaper.workflow.workflow INFO executing verb select
+18:50:31,971 datashaper.workflow.workflow INFO executing verb unroll
+18:50:31,990 datashaper.workflow.workflow INFO executing verb rename
+18:50:31,996 datashaper.workflow.workflow INFO executing verb genid
+18:50:32,2 datashaper.workflow.workflow INFO executing verb unzip
+18:50:32,9 datashaper.workflow.workflow INFO executing verb copy
+18:50:32,15 datashaper.workflow.workflow INFO executing verb filter
+18:50:32,35 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_text_units.parquet
+18:50:32,225 graphrag.index.run INFO Running workflow: create_base_extracted_entities...
+18:50:32,225 graphrag.index.run INFO dependencies for create_base_extracted_entities: ['create_base_text_units']
+18:50:32,226 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+18:50:32,284 datashaper.workflow.workflow INFO executing verb entity_extract
+18:50:32,288 graphrag.llm.openai.create_openai_client INFO Creating OpenAI client base_url=None
+18:50:32,329 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for gpt-4-turbo-preview: TPM=0, RPM=0
+18:50:32,330 graphrag.index.llm.load_llm INFO create concurrency limiter for gpt-4-turbo-preview: 25
+18:50:32,591 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+18:50:32,602 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\n-Goal-\nGiven a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.\n\n-Steps-\n1. Identify all entities. For each identified entity, extract the following information:\n- entity_name: Name of the entity, capitalized\n- entity_type: One of the following types: [diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual]\n- entity_description: Comprehensive description of the entity\'s attributes and activities\nFormat each entity as ("entity"<|><entity_name><|><entity_type><|><entity_description>\n\n2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.\nFor each pair of related entities, extract the following information:\n- source_entity: name of the source entity, as identified in step 1\n- target_entity: name of the target entity, as identified in step 1\n- relationship_description: explanation as to why you think the source entity and the target entity are related to each other\n- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity\n Format each relationship as ("relationship"<|><source_entity><|><target_entity><|><relationship_description><|><relationship_strength>)\n\n3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **##** as the list delimiter.\n\n4. When finished, output <|COMPLETE|>\n\n######################\n-Examples-\n######################\nExample 1:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nwhile Alex clenched his jaw, the buzz of frustration dull against the backdrop of Taylor\'s authoritarian certainty. It was this competitive undercurrent that kept him alert, the sense that his and Jordan\'s shared commitment to discovery was an unspoken rebellion against Cruz\'s narrowing vision of control and order.\n\nThen Taylor did something unexpected. They paused beside Jordan and, for a moment, observed the device with something akin to reverence. “If this tech can be understood..." Taylor said, their voice quieter, "It could change the game for us. For all of us.”\n\nThe underlying dismissal earlier seemed to falter, replaced by a glimpse of reluctant respect for the gravity of what lay in their hands. Jordan looked up, and for a fleeting heartbeat, their eyes locked with Taylor\'s, a wordless clash of wills softening into an uneasy truce.\n\nIt was a small transformation, barely perceptible, but one that Alex noted with an inward nod. They had all been brought here by different paths\n################\nOutput:\n("entity"<|>"Alex"<|>"person"<|>"Alex is a character who experiences frustration and is observant of the dynamics among other characters.")##\n("entity"<|>"Taylor"<|>"person"<|>"Taylor is portrayed with authoritarian certainty and shows a moment of reverence towards a device, indicating a change in perspective.")##\n("entity"<|>"Jordan"<|>"person"<|>"Jordan shares a commitment to discovery and has a significant interaction with Taylor regarding a device.")##\n("entity"<|>"Cruz"<|>"person"<|>"Cruz is associated with a vision of control and order, influencing the dynamics among other characters.")##\n("entity"<|>"The Device"<|>"technology"<|>"The Device is central to the story, with potential game-changing implications, and is revered by Taylor.")##\n("relationship"<|>"Alex"<|>"Taylor"<|>"Alex is affected by Taylor\'s authoritarian certainty and observes changes in Taylor\'s attitude towards the device."<|>7)##\n("relationship"<|>"Alex"<|>"Jordan"<|>"Alex and Jordan share a commitment to discovery, which contrasts with Cruz\'s vision."<|>6)##\n("relationship"<|>"Taylor"<|>"Jordan"<|>"Taylor and Jordan interact directly regarding the device, leading to a moment of mutual respect and an uneasy truce."<|>8)##\n("relationship"<|>"Jordan"<|>"Cruz"<|>"Jordan\'s commitment to discovery is in rebellion against Cruz\'s vision of control and order."<|>5)##\n("relationship"<|>"Taylor"<|>"The Device"<|>"Taylor shows reverence towards the device, indicating its importance and potential impact."<|>9)<|COMPLETE|>\n#############################\nExample 2:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nThey were no longer mere operatives; they had become guardians of a threshold, keepers of a message from a realm beyond stars and stripes. This elevation in their mission could not be shackled by regulations and established protocols—it demanded a new perspective, a new resolve.\n\nTension threaded through the dialogue of beeps and static as communications with Washington buzzed in the background. The team stood, a portentous air enveloping them. It was clear that the decisions they made in the ensuing hours could redefine humanity\'s place in the cosmos or condemn them to ignorance and potential peril.\n\nTheir connection to the stars solidified, the group moved to address the crystallizing warning, shifting from passive recipients to active participants. Mercer\'s latter instincts gained precedence— the team\'s mandate had evolved, no longer solely to observe and report but to interact and prepare. A metamorphosis had begun, and Operation: Dulce hummed with the newfound frequency of their daring, a tone set not by the earthly\n#############\nOutput:\n("entity"<|>"Washington"<|>"location"<|>"Washington is a location where communications are being received, indicating its importance in the decision-making process.")##\n("entity"<|>"Operation: Dulce"<|>"mission"<|>"Operation: Dulce is described as a mission that has evolved to interact and prepare, indicating a significant shift in objectives and activities.")##\n("entity"<|>"The team"<|>"organization"<|>"The team is portrayed as a group of individuals who have transitioned from passive observers to active participants in a mission, showing a dynamic change in their role.")##\n("relationship"<|>"The team"<|>"Washington"<|>"The team receives communications from Washington, which influences their decision-making process."<|>7)##\n("relationship"<|>"The team"<|>"Operation: Dulce"<|>"The team is directly involved in Operation: Dulce, executing its evolved objectives and activities."<|>9)<|COMPLETE|>\n#############################\nExample 3:\n\nEntity_types: [person, role, technology, organization, event, location, concept]\nText:\ntheir voice slicing through the buzz of activity. "Control may be an illusion when facing an intelligence that literally writes its own rules," they stated stoically, casting a watchful eye over the flurry of data.\n\n"It\'s like it\'s learning to communicate," offered Sam Rivera from a nearby interface, their youthful energy boding a mix of awe and anxiety. "This gives talking to strangers\' a whole new meaning."\n\nAlex surveyed his team—each face a study in concentration, determination, and not a small measure of trepidation. "This might well be our first contact," he acknowledged, "And we need to be ready for whatever answers back."\n\nTogether, they stood on the edge of the unknown, forging humanity\'s response to a message from the heavens. The ensuing silence was palpable—a collective introspection about their role in this grand cosmic play, one that could rewrite human history.\n\nThe encrypted dialogue continued to unfold, its intricate patterns showing an almost uncanny anticipation\n#############\nOutput:\n("entity"<|>"Sam Rivera"<|>"person"<|>"Sam Rivera is a member of a team working on communicating with an unknown intelligence, showing a mix of awe and anxiety.")##\n("entity"<|>"Alex"<|>"person"<|>"Alex is the leader of a team attempting first contact with an unknown intelligence, acknowledging the significance of their task.")##\n("entity"<|>"Control"<|>"concept"<|>"Control refers to the ability to manage or govern, which is challenged by an intelligence that writes its own rules.")##\n("entity"<|>"Intelligence"<|>"concept"<|>"Intelligence here refers to an unknown entity capable of writing its own rules and learning to communicate.")##\n("entity"<|>"First Contact"<|>"event"<|>"First Contact is the potential initial communication between humanity and an unknown intelligence.")##\n("entity"<|>"Humanity\'s Response"<|>"event"<|>"Humanity\'s Response is the collective action taken by Alex\'s team in response to a message from an unknown intelligence.")##\n("relationship"<|>"Sam Rivera"<|>"Intelligence"<|>"Sam Rivera is directly involved in the process of learning to communicate with the unknown intelligence."<|>9)##\n("relationship"<|>"Alex"<|>"First Contact"<|>"Alex leads the team that might be making the First Contact with the unknown intelligence."<|>10)##\n("relationship"<|>"Alex"<|>"Humanity\'s Response"<|>"Alex and his team are the key figures in Humanity\'s Response to the unknown intelligence."<|>8)##\n("relationship"<|>"Control"<|>"Intelligence"<|>"The concept of Control is challenged by the Intelligence that writes its own rules."<|>7)<|COMPLETE|>\n#############################\n-Real Data-\n######################\nEntity_types: diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual\nText: .\n      \n\n\nTraining Frequency\nThree times a day as per the training schedule.\n\n\nSleep Schedule\n\n        6 hours of deep sleep in a cave-like enclosure, with periodic naps\n        throughout the day.\n      \n\n\nHarnessing Powers\nFlying: Agility exercises and weighted flights.\n\nFlame Control: Practice with varied distance targets.\n      \nStrength: Weighted flights and simulated battles.\n\n\nTrainer Preparation\n\nTools Needed: Fire-resistant clothing, control staff,\n        large meat rewards, flying equipment.\n      \n\nTargets: Flame-resistant targets, weighted obstacles,\n        simulated opponents.\n      \n\nIncentives: Large, high-quality meat treats and a\n        comfortable nesting area.\n      \n\n\nCapture Manual\nCapture Techniques:\n\n\nTrap Setup: Large, reinforced nets with\n          flame-resistant material.\n        \n\nLure Methods: Use of large prey and shiny objects to\n          attract the dragon.\n        \n\nTiming: During rest periods when they are less\n          active.\n        \n\nWeaknesses:\n\nSensitive to extreme cold.\nDistracted by shiny, reflective objects.\n######################\nOutput:'}
+18:50:32,602 graphrag.llm.base.rate_limiting_llm WARNING Process failed to invoke LLM 1/10 attempts. Cause: rate limit exceeded, will retry. Recommended sleep for 0 seconds. Follow recommendation? True
+18:50:32,604 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+18:50:32,605 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\n-Goal-\nGiven a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.\n\n-Steps-\n1. Identify all entities. For each identified entity, extract the following information:\n- entity_name: Name of the entity, capitalized\n- entity_type: One of the following types: [diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual]\n- entity_description: Comprehensive description of the entity\'s attributes and activities\nFormat each entity as ("entity"<|><entity_name><|><entity_type><|><entity_description>\n\n2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.\nFor each pair of related entities, extract the following information:\n- source_entity: name of the source entity, as identified in step 1\n- target_entity: name of the target entity, as identified in step 1\n- relationship_description: explanation as to why you think the source entity and the target entity are related to each other\n- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity\n Format each relationship as ("relationship"<|><source_entity><|><target_entity><|><relationship_description><|><relationship_strength>)\n\n3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **##** as the list delimiter.\n\n4. When finished, output <|COMPLETE|>\n\n######################\n-Examples-\n######################\nExample 1:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nwhile Alex clenched his jaw, the buzz of frustration dull against the backdrop of Taylor\'s authoritarian certainty. It was this competitive undercurrent that kept him alert, the sense that his and Jordan\'s shared commitment to discovery was an unspoken rebellion against Cruz\'s narrowing vision of control and order.\n\nThen Taylor did something unexpected. They paused beside Jordan and, for a moment, observed the device with something akin to reverence. “If this tech can be understood..." Taylor said, their voice quieter, "It could change the game for us. For all of us.”\n\nThe underlying dismissal earlier seemed to falter, replaced by a glimpse of reluctant respect for the gravity of what lay in their hands. Jordan looked up, and for a fleeting heartbeat, their eyes locked with Taylor\'s, a wordless clash of wills softening into an uneasy truce.\n\nIt was a small transformation, barely perceptible, but one that Alex noted with an inward nod. They had all been brought here by different paths\n################\nOutput:\n("entity"<|>"Alex"<|>"person"<|>"Alex is a character who experiences frustration and is observant of the dynamics among other characters.")##\n("entity"<|>"Taylor"<|>"person"<|>"Taylor is portrayed with authoritarian certainty and shows a moment of reverence towards a device, indicating a change in perspective.")##\n("entity"<|>"Jordan"<|>"person"<|>"Jordan shares a commitment to discovery and has a significant interaction with Taylor regarding a device.")##\n("entity"<|>"Cruz"<|>"person"<|>"Cruz is associated with a vision of control and order, influencing the dynamics among other characters.")##\n("entity"<|>"The Device"<|>"technology"<|>"The Device is central to the story, with potential game-changing implications, and is revered by Taylor.")##\n("relationship"<|>"Alex"<|>"Taylor"<|>"Alex is affected by Taylor\'s authoritarian certainty and observes changes in Taylor\'s attitude towards the device."<|>7)##\n("relationship"<|>"Alex"<|>"Jordan"<|>"Alex and Jordan share a commitment to discovery, which contrasts with Cruz\'s vision."<|>6)##\n("relationship"<|>"Taylor"<|>"Jordan"<|>"Taylor and Jordan interact directly regarding the device, leading to a moment of mutual respect and an uneasy truce."<|>8)##\n("relationship"<|>"Jordan"<|>"Cruz"<|>"Jordan\'s commitment to discovery is in rebellion against Cruz\'s vision of control and order."<|>5)##\n("relationship"<|>"Taylor"<|>"The Device"<|>"Taylor shows reverence towards the device, indicating its importance and potential impact."<|>9)<|COMPLETE|>\n#############################\nExample 2:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nThey were no longer mere operatives; they had become guardians of a threshold, keepers of a message from a realm beyond stars and stripes. This elevation in their mission could not be shackled by regulations and established protocols—it demanded a new perspective, a new resolve.\n\nTension threaded through the dialogue of beeps and static as communications with Washington buzzed in the background. The team stood, a portentous air enveloping them. It was clear that the decisions they made in the ensuing hours could redefine humanity\'s place in the cosmos or condemn them to ignorance and potential peril.\n\nTheir connection to the stars solidified, the group moved to address the crystallizing warning, shifting from passive recipients to active participants. Mercer\'s latter instincts gained precedence— the team\'s mandate had evolved, no longer solely to observe and report but to interact and prepare. A metamorphosis had begun, and Operation: Dulce hummed with the newfound frequency of their daring, a tone set not by the earthly\n#############\nOutput:\n("entity"<|>"Washington"<|>"location"<|>"Washington is a location where communications are being received, indicating its importance in the decision-making process.")##\n("entity"<|>"Operation: Dulce"<|>"mission"<|>"Operation: Dulce is described as a mission that has evolved to interact and prepare, indicating a significant shift in objectives and activities.")##\n("entity"<|>"The team"<|>"organization"<|>"The team is portrayed as a group of individuals who have transitioned from passive observers to active participants in a mission, showing a dynamic change in their role.")##\n("relationship"<|>"The team"<|>"Washington"<|>"The team receives communications from Washington, which influences their decision-making process."<|>7)##\n("relationship"<|>"The team"<|>"Operation: Dulce"<|>"The team is directly involved in Operation: Dulce, executing its evolved objectives and activities."<|>9)<|COMPLETE|>\n#############################\nExample 3:\n\nEntity_types: [person, role, technology, organization, event, location, concept]\nText:\ntheir voice slicing through the buzz of activity. "Control may be an illusion when facing an intelligence that literally writes its own rules," they stated stoically, casting a watchful eye over the flurry of data.\n\n"It\'s like it\'s learning to communicate," offered Sam Rivera from a nearby interface, their youthful energy boding a mix of awe and anxiety. "This gives talking to strangers\' a whole new meaning."\n\nAlex surveyed his team—each face a study in concentration, determination, and not a small measure of trepidation. "This might well be our first contact," he acknowledged, "And we need to be ready for whatever answers back."\n\nTogether, they stood on the edge of the unknown, forging humanity\'s response to a message from the heavens. The ensuing silence was palpable—a collective introspection about their role in this grand cosmic play, one that could rewrite human history.\n\nThe encrypted dialogue continued to unfold, its intricate patterns showing an almost uncanny anticipation\n#############\nOutput:\n("entity"<|>"Sam Rivera"<|>"person"<|>"Sam Rivera is a member of a team working on communicating with an unknown intelligence, showing a mix of awe and anxiety.")##\n("entity"<|>"Alex"<|>"person"<|>"Alex is the leader of a team attempting first contact with an unknown intelligence, acknowledging the significance of their task.")##\n("entity"<|>"Control"<|>"concept"<|>"Control refers to the ability to manage or govern, which is challenged by an intelligence that writes its own rules.")##\n("entity"<|>"Intelligence"<|>"concept"<|>"Intelligence here refers to an unknown entity capable of writing its own rules and learning to communicate.")##\n("entity"<|>"First Contact"<|>"event"<|>"First Contact is the potential initial communication between humanity and an unknown intelligence.")##\n("entity"<|>"Humanity\'s Response"<|>"event"<|>"Humanity\'s Response is the collective action taken by Alex\'s team in response to a message from an unknown intelligence.")##\n("relationship"<|>"Sam Rivera"<|>"Intelligence"<|>"Sam Rivera is directly involved in the process of learning to communicate with the unknown intelligence."<|>9)##\n("relationship"<|>"Alex"<|>"First Contact"<|>"Alex leads the team that might be making the First Contact with the unknown intelligence."<|>10)##\n("relationship"<|>"Alex"<|>"Humanity\'s Response"<|>"Alex and his team are the key figures in Humanity\'s Response to the unknown intelligence."<|>8)##\n("relationship"<|>"Control"<|>"Intelligence"<|>"The concept of Control is challenged by the Intelligence that writes its own rules."<|>7)<|COMPLETE|>\n#############################\n-Real Data-\n######################\nEntity_types: diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual\nText: Dragon Training Manual\n\n\n\nDragon Training Manual\n\nDiet\nMorning: Large game meat like deer or wild boar.\n\nAfternoon: A mix of fish, reptiles, and specially\n        crafted mineral supplements.\n      \n\nEvening: A mix of large birds and fire-resistant plants\n        to aid flame production.\n      \n\n\nTraining Schedule\n\nMorning: Flying drills with agility exercises in the\n        sky (2 hours).\n      \n\nAfternoon: Flame control practice with targets at\n        varying distances (2 hours).\n      \n\nEvening: Strength and endurance training with weighted\n        flights and battles against simulated opponents (2 hours).\n      \n\n\nTraining Location\n\n        A vast, open mountainous area with plenty of space for flying and fire\n        practice.\n      \n\n\nTrainer Requirements\nMust be a dragonologist or a mythical creature specialist.\n\n        Brave, patient, and knowledgeable in handling powerful, mythical beings.\n      \n\n        Tools: Fire-resistant clothing, control staff, large meat rewards, and\n        flying equipment.\n      \n\n\nTraining Frequency\nThree times a day as per the training schedule.\n\n\nSleep Schedule\n\n        6 hours of deep sleep in a cave-like enclosure, with periodic naps\n        throughout the day.\n      \n\n\nHarnessing Powers\nFlying: Agility exercises and weighted flights.\n\nFlame Control: Practice with varied distance targets.\n      \nStrength: Weighted flights and simulated battles.\n\n\nTrainer Preparation\n\nTools Needed: Fire-resistant clothing, control staff,\n        large meat rewards, flying equipment.\n      \n\nTargets\n######################\nOutput:'}
+18:50:32,605 graphrag.llm.base.rate_limiting_llm WARNING Process failed to invoke LLM 1/10 attempts. Cause: rate limit exceeded, will retry. Recommended sleep for 0 seconds. Follow recommendation? True
+18:50:33,330 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:50:33,334 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 0.9839999999967404. input_tokens=1982, output_tokens=5
+18:50:34,186 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+18:50:34,189 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\n-Goal-\nGiven a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.\n\n-Steps-\n1. Identify all entities. For each identified entity, extract the following information:\n- entity_name: Name of the entity, capitalized\n- entity_type: One of the following types: [diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual]\n- entity_description: Comprehensive description of the entity\'s attributes and activities\nFormat each entity as ("entity"<|><entity_name><|><entity_type><|><entity_description>\n\n2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.\nFor each pair of related entities, extract the following information:\n- source_entity: name of the source entity, as identified in step 1\n- target_entity: name of the target entity, as identified in step 1\n- relationship_description: explanation as to why you think the source entity and the target entity are related to each other\n- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity\n Format each relationship as ("relationship"<|><source_entity><|><target_entity><|><relationship_description><|><relationship_strength>)\n\n3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **##** as the list delimiter.\n\n4. When finished, output <|COMPLETE|>\n\n######################\n-Examples-\n######################\nExample 1:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nwhile Alex clenched his jaw, the buzz of frustration dull against the backdrop of Taylor\'s authoritarian certainty. It was this competitive undercurrent that kept him alert, the sense that his and Jordan\'s shared commitment to discovery was an unspoken rebellion against Cruz\'s narrowing vision of control and order.\n\nThen Taylor did something unexpected. They paused beside Jordan and, for a moment, observed the device with something akin to reverence. “If this tech can be understood..." Taylor said, their voice quieter, "It could change the game for us. For all of us.”\n\nThe underlying dismissal earlier seemed to falter, replaced by a glimpse of reluctant respect for the gravity of what lay in their hands. Jordan looked up, and for a fleeting heartbeat, their eyes locked with Taylor\'s, a wordless clash of wills softening into an uneasy truce.\n\nIt was a small transformation, barely perceptible, but one that Alex noted with an inward nod. They had all been brought here by different paths\n################\nOutput:\n("entity"<|>"Alex"<|>"person"<|>"Alex is a character who experiences frustration and is observant of the dynamics among other characters.")##\n("entity"<|>"Taylor"<|>"person"<|>"Taylor is portrayed with authoritarian certainty and shows a moment of reverence towards a device, indicating a change in perspective.")##\n("entity"<|>"Jordan"<|>"person"<|>"Jordan shares a commitment to discovery and has a significant interaction with Taylor regarding a device.")##\n("entity"<|>"Cruz"<|>"person"<|>"Cruz is associated with a vision of control and order, influencing the dynamics among other characters.")##\n("entity"<|>"The Device"<|>"technology"<|>"The Device is central to the story, with potential game-changing implications, and is revered by Taylor.")##\n("relationship"<|>"Alex"<|>"Taylor"<|>"Alex is affected by Taylor\'s authoritarian certainty and observes changes in Taylor\'s attitude towards the device."<|>7)##\n("relationship"<|>"Alex"<|>"Jordan"<|>"Alex and Jordan share a commitment to discovery, which contrasts with Cruz\'s vision."<|>6)##\n("relationship"<|>"Taylor"<|>"Jordan"<|>"Taylor and Jordan interact directly regarding the device, leading to a moment of mutual respect and an uneasy truce."<|>8)##\n("relationship"<|>"Jordan"<|>"Cruz"<|>"Jordan\'s commitment to discovery is in rebellion against Cruz\'s vision of control and order."<|>5)##\n("relationship"<|>"Taylor"<|>"The Device"<|>"Taylor shows reverence towards the device, indicating its importance and potential impact."<|>9)<|COMPLETE|>\n#############################\nExample 2:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nThey were no longer mere operatives; they had become guardians of a threshold, keepers of a message from a realm beyond stars and stripes. This elevation in their mission could not be shackled by regulations and established protocols—it demanded a new perspective, a new resolve.\n\nTension threaded through the dialogue of beeps and static as communications with Washington buzzed in the background. The team stood, a portentous air enveloping them. It was clear that the decisions they made in the ensuing hours could redefine humanity\'s place in the cosmos or condemn them to ignorance and potential peril.\n\nTheir connection to the stars solidified, the group moved to address the crystallizing warning, shifting from passive recipients to active participants. Mercer\'s latter instincts gained precedence— the team\'s mandate had evolved, no longer solely to observe and report but to interact and prepare. A metamorphosis had begun, and Operation: Dulce hummed with the newfound frequency of their daring, a tone set not by the earthly\n#############\nOutput:\n("entity"<|>"Washington"<|>"location"<|>"Washington is a location where communications are being received, indicating its importance in the decision-making process.")##\n("entity"<|>"Operation: Dulce"<|>"mission"<|>"Operation: Dulce is described as a mission that has evolved to interact and prepare, indicating a significant shift in objectives and activities.")##\n("entity"<|>"The team"<|>"organization"<|>"The team is portrayed as a group of individuals who have transitioned from passive observers to active participants in a mission, showing a dynamic change in their role.")##\n("relationship"<|>"The team"<|>"Washington"<|>"The team receives communications from Washington, which influences their decision-making process."<|>7)##\n("relationship"<|>"The team"<|>"Operation: Dulce"<|>"The team is directly involved in Operation: Dulce, executing its evolved objectives and activities."<|>9)<|COMPLETE|>\n#############################\nExample 3:\n\nEntity_types: [person, role, technology, organization, event, location, concept]\nText:\ntheir voice slicing through the buzz of activity. "Control may be an illusion when facing an intelligence that literally writes its own rules," they stated stoically, casting a watchful eye over the flurry of data.\n\n"It\'s like it\'s learning to communicate," offered Sam Rivera from a nearby interface, their youthful energy boding a mix of awe and anxiety. "This gives talking to strangers\' a whole new meaning."\n\nAlex surveyed his team—each face a study in concentration, determination, and not a small measure of trepidation. "This might well be our first contact," he acknowledged, "And we need to be ready for whatever answers back."\n\nTogether, they stood on the edge of the unknown, forging humanity\'s response to a message from the heavens. The ensuing silence was palpable—a collective introspection about their role in this grand cosmic play, one that could rewrite human history.\n\nThe encrypted dialogue continued to unfold, its intricate patterns showing an almost uncanny anticipation\n#############\nOutput:\n("entity"<|>"Sam Rivera"<|>"person"<|>"Sam Rivera is a member of a team working on communicating with an unknown intelligence, showing a mix of awe and anxiety.")##\n("entity"<|>"Alex"<|>"person"<|>"Alex is the leader of a team attempting first contact with an unknown intelligence, acknowledging the significance of their task.")##\n("entity"<|>"Control"<|>"concept"<|>"Control refers to the ability to manage or govern, which is challenged by an intelligence that writes its own rules.")##\n("entity"<|>"Intelligence"<|>"concept"<|>"Intelligence here refers to an unknown entity capable of writing its own rules and learning to communicate.")##\n("entity"<|>"First Contact"<|>"event"<|>"First Contact is the potential initial communication between humanity and an unknown intelligence.")##\n("entity"<|>"Humanity\'s Response"<|>"event"<|>"Humanity\'s Response is the collective action taken by Alex\'s team in response to a message from an unknown intelligence.")##\n("relationship"<|>"Sam Rivera"<|>"Intelligence"<|>"Sam Rivera is directly involved in the process of learning to communicate with the unknown intelligence."<|>9)##\n("relationship"<|>"Alex"<|>"First Contact"<|>"Alex leads the team that might be making the First Contact with the unknown intelligence."<|>10)##\n("relationship"<|>"Alex"<|>"Humanity\'s Response"<|>"Alex and his team are the key figures in Humanity\'s Response to the unknown intelligence."<|>8)##\n("relationship"<|>"Control"<|>"Intelligence"<|>"The concept of Control is challenged by the Intelligence that writes its own rules."<|>7)<|COMPLETE|>\n#############################\n-Real Data-\n######################\nEntity_types: diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual\nText: Dragon Training Manual\n\n\n\nDragon Training Manual\n\nDiet\nMorning: Large game meat like deer or wild boar.\n\nAfternoon: A mix of fish, reptiles, and specially\n        crafted mineral supplements.\n      \n\nEvening: A mix of large birds and fire-resistant plants\n        to aid flame production.\n      \n\n\nTraining Schedule\n\nMorning: Flying drills with agility exercises in the\n        sky (2 hours).\n      \n\nAfternoon: Flame control practice with targets at\n        varying distances (2 hours).\n      \n\nEvening: Strength and endurance training with weighted\n        flights and battles against simulated opponents (2 hours).\n      \n\n\nTraining Location\n\n        A vast, open mountainous area with plenty of space for flying and fire\n        practice.\n      \n\n\nTrainer Requirements\nMust be a dragonologist or a mythical creature specialist.\n\n        Brave, patient, and knowledgeable in handling powerful, mythical beings.\n      \n\n        Tools: Fire-resistant clothing, control staff, large meat rewards, and\n        flying equipment.\n      \n\n\nTraining Frequency\nThree times a day as per the training schedule.\n\n\nSleep Schedule\n\n        6 hours of deep sleep in a cave-like enclosure, with periodic naps\n        throughout the day.\n      \n\n\nHarnessing Powers\nFlying: Agility exercises and weighted flights.\n\nFlame Control: Practice with varied distance targets.\n      \nStrength: Weighted flights and simulated battles.\n\n\nTrainer Preparation\n\nTools Needed: Fire-resistant clothing, control staff,\n        large meat rewards, flying equipment.\n      \n\nTargets\n######################\nOutput:'}
+18:50:34,189 graphrag.llm.base.rate_limiting_llm WARNING Process failed to invoke LLM 2/10 attempts. Cause: rate limit exceeded, will retry. Recommended sleep for 0 seconds. Follow recommendation? True
+18:50:36,429 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+18:50:36,431 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\n-Goal-\nGiven a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.\n\n-Steps-\n1. Identify all entities. For each identified entity, extract the following information:\n- entity_name: Name of the entity, capitalized\n- entity_type: One of the following types: [diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual]\n- entity_description: Comprehensive description of the entity\'s attributes and activities\nFormat each entity as ("entity"<|><entity_name><|><entity_type><|><entity_description>\n\n2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.\nFor each pair of related entities, extract the following information:\n- source_entity: name of the source entity, as identified in step 1\n- target_entity: name of the target entity, as identified in step 1\n- relationship_description: explanation as to why you think the source entity and the target entity are related to each other\n- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity\n Format each relationship as ("relationship"<|><source_entity><|><target_entity><|><relationship_description><|><relationship_strength>)\n\n3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **##** as the list delimiter.\n\n4. When finished, output <|COMPLETE|>\n\n######################\n-Examples-\n######################\nExample 1:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nwhile Alex clenched his jaw, the buzz of frustration dull against the backdrop of Taylor\'s authoritarian certainty. It was this competitive undercurrent that kept him alert, the sense that his and Jordan\'s shared commitment to discovery was an unspoken rebellion against Cruz\'s narrowing vision of control and order.\n\nThen Taylor did something unexpected. They paused beside Jordan and, for a moment, observed the device with something akin to reverence. “If this tech can be understood..." Taylor said, their voice quieter, "It could change the game for us. For all of us.”\n\nThe underlying dismissal earlier seemed to falter, replaced by a glimpse of reluctant respect for the gravity of what lay in their hands. Jordan looked up, and for a fleeting heartbeat, their eyes locked with Taylor\'s, a wordless clash of wills softening into an uneasy truce.\n\nIt was a small transformation, barely perceptible, but one that Alex noted with an inward nod. They had all been brought here by different paths\n################\nOutput:\n("entity"<|>"Alex"<|>"person"<|>"Alex is a character who experiences frustration and is observant of the dynamics among other characters.")##\n("entity"<|>"Taylor"<|>"person"<|>"Taylor is portrayed with authoritarian certainty and shows a moment of reverence towards a device, indicating a change in perspective.")##\n("entity"<|>"Jordan"<|>"person"<|>"Jordan shares a commitment to discovery and has a significant interaction with Taylor regarding a device.")##\n("entity"<|>"Cruz"<|>"person"<|>"Cruz is associated with a vision of control and order, influencing the dynamics among other characters.")##\n("entity"<|>"The Device"<|>"technology"<|>"The Device is central to the story, with potential game-changing implications, and is revered by Taylor.")##\n("relationship"<|>"Alex"<|>"Taylor"<|>"Alex is affected by Taylor\'s authoritarian certainty and observes changes in Taylor\'s attitude towards the device."<|>7)##\n("relationship"<|>"Alex"<|>"Jordan"<|>"Alex and Jordan share a commitment to discovery, which contrasts with Cruz\'s vision."<|>6)##\n("relationship"<|>"Taylor"<|>"Jordan"<|>"Taylor and Jordan interact directly regarding the device, leading to a moment of mutual respect and an uneasy truce."<|>8)##\n("relationship"<|>"Jordan"<|>"Cruz"<|>"Jordan\'s commitment to discovery is in rebellion against Cruz\'s vision of control and order."<|>5)##\n("relationship"<|>"Taylor"<|>"The Device"<|>"Taylor shows reverence towards the device, indicating its importance and potential impact."<|>9)<|COMPLETE|>\n#############################\nExample 2:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nThey were no longer mere operatives; they had become guardians of a threshold, keepers of a message from a realm beyond stars and stripes. This elevation in their mission could not be shackled by regulations and established protocols—it demanded a new perspective, a new resolve.\n\nTension threaded through the dialogue of beeps and static as communications with Washington buzzed in the background. The team stood, a portentous air enveloping them. It was clear that the decisions they made in the ensuing hours could redefine humanity\'s place in the cosmos or condemn them to ignorance and potential peril.\n\nTheir connection to the stars solidified, the group moved to address the crystallizing warning, shifting from passive recipients to active participants. Mercer\'s latter instincts gained precedence— the team\'s mandate had evolved, no longer solely to observe and report but to interact and prepare. A metamorphosis had begun, and Operation: Dulce hummed with the newfound frequency of their daring, a tone set not by the earthly\n#############\nOutput:\n("entity"<|>"Washington"<|>"location"<|>"Washington is a location where communications are being received, indicating its importance in the decision-making process.")##\n("entity"<|>"Operation: Dulce"<|>"mission"<|>"Operation: Dulce is described as a mission that has evolved to interact and prepare, indicating a significant shift in objectives and activities.")##\n("entity"<|>"The team"<|>"organization"<|>"The team is portrayed as a group of individuals who have transitioned from passive observers to active participants in a mission, showing a dynamic change in their role.")##\n("relationship"<|>"The team"<|>"Washington"<|>"The team receives communications from Washington, which influences their decision-making process."<|>7)##\n("relationship"<|>"The team"<|>"Operation: Dulce"<|>"The team is directly involved in Operation: Dulce, executing its evolved objectives and activities."<|>9)<|COMPLETE|>\n#############################\nExample 3:\n\nEntity_types: [person, role, technology, organization, event, location, concept]\nText:\ntheir voice slicing through the buzz of activity. "Control may be an illusion when facing an intelligence that literally writes its own rules," they stated stoically, casting a watchful eye over the flurry of data.\n\n"It\'s like it\'s learning to communicate," offered Sam Rivera from a nearby interface, their youthful energy boding a mix of awe and anxiety. "This gives talking to strangers\' a whole new meaning."\n\nAlex surveyed his team—each face a study in concentration, determination, and not a small measure of trepidation. "This might well be our first contact," he acknowledged, "And we need to be ready for whatever answers back."\n\nTogether, they stood on the edge of the unknown, forging humanity\'s response to a message from the heavens. The ensuing silence was palpable—a collective introspection about their role in this grand cosmic play, one that could rewrite human history.\n\nThe encrypted dialogue continued to unfold, its intricate patterns showing an almost uncanny anticipation\n#############\nOutput:\n("entity"<|>"Sam Rivera"<|>"person"<|>"Sam Rivera is a member of a team working on communicating with an unknown intelligence, showing a mix of awe and anxiety.")##\n("entity"<|>"Alex"<|>"person"<|>"Alex is the leader of a team attempting first contact with an unknown intelligence, acknowledging the significance of their task.")##\n("entity"<|>"Control"<|>"concept"<|>"Control refers to the ability to manage or govern, which is challenged by an intelligence that writes its own rules.")##\n("entity"<|>"Intelligence"<|>"concept"<|>"Intelligence here refers to an unknown entity capable of writing its own rules and learning to communicate.")##\n("entity"<|>"First Contact"<|>"event"<|>"First Contact is the potential initial communication between humanity and an unknown intelligence.")##\n("entity"<|>"Humanity\'s Response"<|>"event"<|>"Humanity\'s Response is the collective action taken by Alex\'s team in response to a message from an unknown intelligence.")##\n("relationship"<|>"Sam Rivera"<|>"Intelligence"<|>"Sam Rivera is directly involved in the process of learning to communicate with the unknown intelligence."<|>9)##\n("relationship"<|>"Alex"<|>"First Contact"<|>"Alex leads the team that might be making the First Contact with the unknown intelligence."<|>10)##\n("relationship"<|>"Alex"<|>"Humanity\'s Response"<|>"Alex and his team are the key figures in Humanity\'s Response to the unknown intelligence."<|>8)##\n("relationship"<|>"Control"<|>"Intelligence"<|>"The concept of Control is challenged by the Intelligence that writes its own rules."<|>7)<|COMPLETE|>\n#############################\n-Real Data-\n######################\nEntity_types: diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual\nText: Dragon Training Manual\n\n\n\nDragon Training Manual\n\nDiet\nMorning: Large game meat like deer or wild boar.\n\nAfternoon: A mix of fish, reptiles, and specially\n        crafted mineral supplements.\n      \n\nEvening: A mix of large birds and fire-resistant plants\n        to aid flame production.\n      \n\n\nTraining Schedule\n\nMorning: Flying drills with agility exercises in the\n        sky (2 hours).\n      \n\nAfternoon: Flame control practice with targets at\n        varying distances (2 hours).\n      \n\nEvening: Strength and endurance training with weighted\n        flights and battles against simulated opponents (2 hours).\n      \n\n\nTraining Location\n\n        A vast, open mountainous area with plenty of space for flying and fire\n        practice.\n      \n\n\nTrainer Requirements\nMust be a dragonologist or a mythical creature specialist.\n\n        Brave, patient, and knowledgeable in handling powerful, mythical beings.\n      \n\n        Tools: Fire-resistant clothing, control staff, large meat rewards, and\n        flying equipment.\n      \n\n\nTraining Frequency\nThree times a day as per the training schedule.\n\n\nSleep Schedule\n\n        6 hours of deep sleep in a cave-like enclosure, with periodic naps\n        throughout the day.\n      \n\n\nHarnessing Powers\nFlying: Agility exercises and weighted flights.\n\nFlame Control: Practice with varied distance targets.\n      \nStrength: Weighted flights and simulated battles.\n\n\nTrainer Preparation\n\nTools Needed: Fire-resistant clothing, control staff,\n        large meat rewards, flying equipment.\n      \n\nTargets\n######################\nOutput:'}
+18:50:36,431 graphrag.llm.base.rate_limiting_llm WARNING Process failed to invoke LLM 3/10 attempts. Cause: rate limit exceeded, will retry. Recommended sleep for 0 seconds. Follow recommendation? True
+18:50:40,722 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+18:50:40,724 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\n-Goal-\nGiven a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.\n\n-Steps-\n1. Identify all entities. For each identified entity, extract the following information:\n- entity_name: Name of the entity, capitalized\n- entity_type: One of the following types: [diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual]\n- entity_description: Comprehensive description of the entity\'s attributes and activities\nFormat each entity as ("entity"<|><entity_name><|><entity_type><|><entity_description>\n\n2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.\nFor each pair of related entities, extract the following information:\n- source_entity: name of the source entity, as identified in step 1\n- target_entity: name of the target entity, as identified in step 1\n- relationship_description: explanation as to why you think the source entity and the target entity are related to each other\n- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity\n Format each relationship as ("relationship"<|><source_entity><|><target_entity><|><relationship_description><|><relationship_strength>)\n\n3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **##** as the list delimiter.\n\n4. When finished, output <|COMPLETE|>\n\n######################\n-Examples-\n######################\nExample 1:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nwhile Alex clenched his jaw, the buzz of frustration dull against the backdrop of Taylor\'s authoritarian certainty. It was this competitive undercurrent that kept him alert, the sense that his and Jordan\'s shared commitment to discovery was an unspoken rebellion against Cruz\'s narrowing vision of control and order.\n\nThen Taylor did something unexpected. They paused beside Jordan and, for a moment, observed the device with something akin to reverence. “If this tech can be understood..." Taylor said, their voice quieter, "It could change the game for us. For all of us.”\n\nThe underlying dismissal earlier seemed to falter, replaced by a glimpse of reluctant respect for the gravity of what lay in their hands. Jordan looked up, and for a fleeting heartbeat, their eyes locked with Taylor\'s, a wordless clash of wills softening into an uneasy truce.\n\nIt was a small transformation, barely perceptible, but one that Alex noted with an inward nod. They had all been brought here by different paths\n################\nOutput:\n("entity"<|>"Alex"<|>"person"<|>"Alex is a character who experiences frustration and is observant of the dynamics among other characters.")##\n("entity"<|>"Taylor"<|>"person"<|>"Taylor is portrayed with authoritarian certainty and shows a moment of reverence towards a device, indicating a change in perspective.")##\n("entity"<|>"Jordan"<|>"person"<|>"Jordan shares a commitment to discovery and has a significant interaction with Taylor regarding a device.")##\n("entity"<|>"Cruz"<|>"person"<|>"Cruz is associated with a vision of control and order, influencing the dynamics among other characters.")##\n("entity"<|>"The Device"<|>"technology"<|>"The Device is central to the story, with potential game-changing implications, and is revered by Taylor.")##\n("relationship"<|>"Alex"<|>"Taylor"<|>"Alex is affected by Taylor\'s authoritarian certainty and observes changes in Taylor\'s attitude towards the device."<|>7)##\n("relationship"<|>"Alex"<|>"Jordan"<|>"Alex and Jordan share a commitment to discovery, which contrasts with Cruz\'s vision."<|>6)##\n("relationship"<|>"Taylor"<|>"Jordan"<|>"Taylor and Jordan interact directly regarding the device, leading to a moment of mutual respect and an uneasy truce."<|>8)##\n("relationship"<|>"Jordan"<|>"Cruz"<|>"Jordan\'s commitment to discovery is in rebellion against Cruz\'s vision of control and order."<|>5)##\n("relationship"<|>"Taylor"<|>"The Device"<|>"Taylor shows reverence towards the device, indicating its importance and potential impact."<|>9)<|COMPLETE|>\n#############################\nExample 2:\n\nEntity_types: [person, technology, mission, organization, location]\nText:\nThey were no longer mere operatives; they had become guardians of a threshold, keepers of a message from a realm beyond stars and stripes. This elevation in their mission could not be shackled by regulations and established protocols—it demanded a new perspective, a new resolve.\n\nTension threaded through the dialogue of beeps and static as communications with Washington buzzed in the background. The team stood, a portentous air enveloping them. It was clear that the decisions they made in the ensuing hours could redefine humanity\'s place in the cosmos or condemn them to ignorance and potential peril.\n\nTheir connection to the stars solidified, the group moved to address the crystallizing warning, shifting from passive recipients to active participants. Mercer\'s latter instincts gained precedence— the team\'s mandate had evolved, no longer solely to observe and report but to interact and prepare. A metamorphosis had begun, and Operation: Dulce hummed with the newfound frequency of their daring, a tone set not by the earthly\n#############\nOutput:\n("entity"<|>"Washington"<|>"location"<|>"Washington is a location where communications are being received, indicating its importance in the decision-making process.")##\n("entity"<|>"Operation: Dulce"<|>"mission"<|>"Operation: Dulce is described as a mission that has evolved to interact and prepare, indicating a significant shift in objectives and activities.")##\n("entity"<|>"The team"<|>"organization"<|>"The team is portrayed as a group of individuals who have transitioned from passive observers to active participants in a mission, showing a dynamic change in their role.")##\n("relationship"<|>"The team"<|>"Washington"<|>"The team receives communications from Washington, which influences their decision-making process."<|>7)##\n("relationship"<|>"The team"<|>"Operation: Dulce"<|>"The team is directly involved in Operation: Dulce, executing its evolved objectives and activities."<|>9)<|COMPLETE|>\n#############################\nExample 3:\n\nEntity_types: [person, role, technology, organization, event, location, concept]\nText:\ntheir voice slicing through the buzz of activity. "Control may be an illusion when facing an intelligence that literally writes its own rules," they stated stoically, casting a watchful eye over the flurry of data.\n\n"It\'s like it\'s learning to communicate," offered Sam Rivera from a nearby interface, their youthful energy boding a mix of awe and anxiety. "This gives talking to strangers\' a whole new meaning."\n\nAlex surveyed his team—each face a study in concentration, determination, and not a small measure of trepidation. "This might well be our first contact," he acknowledged, "And we need to be ready for whatever answers back."\n\nTogether, they stood on the edge of the unknown, forging humanity\'s response to a message from the heavens. The ensuing silence was palpable—a collective introspection about their role in this grand cosmic play, one that could rewrite human history.\n\nThe encrypted dialogue continued to unfold, its intricate patterns showing an almost uncanny anticipation\n#############\nOutput:\n("entity"<|>"Sam Rivera"<|>"person"<|>"Sam Rivera is a member of a team working on communicating with an unknown intelligence, showing a mix of awe and anxiety.")##\n("entity"<|>"Alex"<|>"person"<|>"Alex is the leader of a team attempting first contact with an unknown intelligence, acknowledging the significance of their task.")##\n("entity"<|>"Control"<|>"concept"<|>"Control refers to the ability to manage or govern, which is challenged by an intelligence that writes its own rules.")##\n("entity"<|>"Intelligence"<|>"concept"<|>"Intelligence here refers to an unknown entity capable of writing its own rules and learning to communicate.")##\n("entity"<|>"First Contact"<|>"event"<|>"First Contact is the potential initial communication between humanity and an unknown intelligence.")##\n("entity"<|>"Humanity\'s Response"<|>"event"<|>"Humanity\'s Response is the collective action taken by Alex\'s team in response to a message from an unknown intelligence.")##\n("relationship"<|>"Sam Rivera"<|>"Intelligence"<|>"Sam Rivera is directly involved in the process of learning to communicate with the unknown intelligence."<|>9)##\n("relationship"<|>"Alex"<|>"First Contact"<|>"Alex leads the team that might be making the First Contact with the unknown intelligence."<|>10)##\n("relationship"<|>"Alex"<|>"Humanity\'s Response"<|>"Alex and his team are the key figures in Humanity\'s Response to the unknown intelligence."<|>8)##\n("relationship"<|>"Control"<|>"Intelligence"<|>"The concept of Control is challenged by the Intelligence that writes its own rules."<|>7)<|COMPLETE|>\n#############################\n-Real Data-\n######################\nEntity_types: diet,training_schedule,training_location,trainer_requirements,training_frequency,sleep_schedule,harnessing_powers,trainer_preparation,capture_manual\nText: Dragon Training Manual\n\n\n\nDragon Training Manual\n\nDiet\nMorning: Large game meat like deer or wild boar.\n\nAfternoon: A mix of fish, reptiles, and specially\n        crafted mineral supplements.\n      \n\nEvening: A mix of large birds and fire-resistant plants\n        to aid flame production.\n      \n\n\nTraining Schedule\n\nMorning: Flying drills with agility exercises in the\n        sky (2 hours).\n      \n\nAfternoon: Flame control practice with targets at\n        varying distances (2 hours).\n      \n\nEvening: Strength and endurance training with weighted\n        flights and battles against simulated opponents (2 hours).\n      \n\n\nTraining Location\n\n        A vast, open mountainous area with plenty of space for flying and fire\n        practice.\n      \n\n\nTrainer Requirements\nMust be a dragonologist or a mythical creature specialist.\n\n        Brave, patient, and knowledgeable in handling powerful, mythical beings.\n      \n\n        Tools: Fire-resistant clothing, control staff, large meat rewards, and\n        flying equipment.\n      \n\n\nTraining Frequency\nThree times a day as per the training schedule.\n\n\nSleep Schedule\n\n        6 hours of deep sleep in a cave-like enclosure, with periodic naps\n        throughout the day.\n      \n\n\nHarnessing Powers\nFlying: Agility exercises and weighted flights.\n\nFlame Control: Practice with varied distance targets.\n      \nStrength: Weighted flights and simulated battles.\n\n\nTrainer Preparation\n\nTools Needed: Fire-resistant clothing, control staff,\n        large meat rewards, flying equipment.\n      \n\nTargets\n######################\nOutput:'}
+18:50:40,724 graphrag.llm.base.rate_limiting_llm WARNING Process failed to invoke LLM 4/10 attempts. Cause: rate limit exceeded, will retry. Recommended sleep for 0 seconds. Follow recommendation? True
+18:50:41,338 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:50:41,341 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 8.978000000002794. input_tokens=2134, output_tokens=257
+18:50:45,693 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:50:45,695 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 13.336999999999534. input_tokens=2277, output_tokens=462
+18:50:48,319 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:50:48,321 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 1 retries took 14.221000000005006. input_tokens=2182, output_tokens=453
+18:50:48,644 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:50:48,647 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 16.29200000000128. input_tokens=2278, output_tokens=424
+18:51:06,250 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:06,253 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 4 retries took 17.38300000000163. input_tokens=2277, output_tokens=574
+18:51:06,270 datashaper.workflow.workflow INFO executing verb merge_graphs
+18:51:06,279 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_extracted_entities.parquet
+18:51:06,455 graphrag.index.run INFO Running workflow: create_summarized_entities...
+18:51:06,456 graphrag.index.run INFO dependencies for create_summarized_entities: ['create_base_extracted_entities']
+18:51:06,456 graphrag.index.run INFO read table from storage: create_base_extracted_entities.parquet
+18:51:06,483 datashaper.workflow.workflow INFO executing verb summarize_descriptions
+18:51:08,900 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:08,902 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.389999999999418. input_tokens=200, output_tokens=50
+18:51:09,157 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:09,158 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.650999999998021. input_tokens=200, output_tokens=65
+18:51:09,258 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:09,262 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.75800000000163. input_tokens=193, output_tokens=63
+18:51:09,314 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:09,327 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.8110000000015134. input_tokens=198, output_tokens=77
+18:51:10,475 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:10,477 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.9769999999989523. input_tokens=191, output_tokens=106
+18:51:11,396 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:11,398 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 4.902000000001863. input_tokens=183, output_tokens=141
+18:51:11,412 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_summarized_entities.parquet
+18:51:11,562 graphrag.index.run INFO Running workflow: create_base_entity_graph...
+18:51:11,562 graphrag.index.run INFO dependencies for create_base_entity_graph: ['create_summarized_entities']
+18:51:11,563 graphrag.index.run INFO read table from storage: create_summarized_entities.parquet
+18:51:11,590 datashaper.workflow.workflow INFO executing verb cluster_graph
+18:51:11,620 datashaper.workflow.workflow INFO executing verb select
+18:51:11,622 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_entity_graph.parquet
+18:51:11,777 graphrag.index.run INFO Running workflow: create_final_entities...
+18:51:11,777 graphrag.index.run INFO dependencies for create_final_entities: ['create_base_entity_graph']
+18:51:11,777 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+18:51:11,807 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:51:11,821 datashaper.workflow.workflow INFO executing verb rename
+18:51:11,832 datashaper.workflow.workflow INFO executing verb select
+18:51:11,844 datashaper.workflow.workflow INFO executing verb dedupe
+18:51:11,857 datashaper.workflow.workflow INFO executing verb rename
+18:51:11,884 datashaper.workflow.workflow INFO executing verb filter
+18:51:11,910 datashaper.workflow.workflow INFO executing verb text_split
+18:51:11,924 datashaper.workflow.workflow INFO executing verb drop
+18:51:11,937 datashaper.workflow.workflow INFO executing verb merge
+18:51:11,957 datashaper.workflow.workflow INFO executing verb text_embed
+18:51:11,959 graphrag.llm.openai.create_openai_client INFO Creating OpenAI client base_url=None
+18:51:11,993 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for text-embedding-3-small: TPM=0, RPM=0
+18:51:11,993 graphrag.index.llm.load_llm INFO create concurrency limiter for text-embedding-3-small: 25
+18:51:11,996 graphrag.index.verbs.text.embed.strategies.openai INFO embedding 28 inputs via 28 snippets using 2 batches. max_batch_size=16, max_tokens=8191
+18:51:12,249 httpx INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+18:51:12,356 httpx INFO HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+18:51:12,384 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.385999999998603. input_tokens=587, output_tokens=0
+18:51:12,507 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 0.5090000000054715. input_tokens=813, output_tokens=0
+18:51:12,553 datashaper.workflow.workflow INFO executing verb drop
+18:51:12,566 datashaper.workflow.workflow INFO executing verb filter
+18:51:12,585 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_entities.parquet
+18:51:12,806 graphrag.index.run INFO Running workflow: create_final_nodes...
+18:51:12,806 graphrag.index.run INFO dependencies for create_final_nodes: ['create_base_entity_graph']
+18:51:12,806 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+18:51:12,842 datashaper.workflow.workflow INFO executing verb layout_graph
+18:51:12,865 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:51:12,881 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:51:12,897 datashaper.workflow.workflow INFO executing verb drop
+18:51:12,914 datashaper.workflow.workflow INFO executing verb filter
+18:51:12,945 datashaper.workflow.workflow INFO executing verb select
+18:51:12,960 datashaper.workflow.workflow INFO executing verb rename
+18:51:12,974 datashaper.workflow.workflow INFO executing verb join
+18:51:13,3 datashaper.workflow.workflow INFO executing verb convert
+18:51:13,70 datashaper.workflow.workflow INFO executing verb rename
+18:51:13,72 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_nodes.parquet
+18:51:13,307 graphrag.index.run INFO Running workflow: create_final_communities...
+18:51:13,307 graphrag.index.run INFO dependencies for create_final_communities: ['create_base_entity_graph']
+18:51:13,308 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+18:51:13,384 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:51:13,404 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:51:13,424 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:51:13,451 datashaper.workflow.workflow INFO executing verb join
+18:51:13,478 datashaper.workflow.workflow INFO executing verb join
+18:51:13,501 datashaper.workflow.workflow INFO executing verb concat
+18:51:13,521 datashaper.workflow.workflow INFO executing verb filter
+18:51:13,601 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:51:13,627 datashaper.workflow.workflow INFO executing verb join
+18:51:13,653 datashaper.workflow.workflow INFO executing verb filter
+18:51:13,699 datashaper.workflow.workflow INFO executing verb fill
+18:51:13,719 datashaper.workflow.workflow INFO executing verb merge
+18:51:13,740 datashaper.workflow.workflow INFO executing verb copy
+18:51:13,761 datashaper.workflow.workflow INFO executing verb select
+18:51:13,763 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_communities.parquet
+18:51:13,948 graphrag.index.run INFO Running workflow: join_text_units_to_entity_ids...
+18:51:13,949 graphrag.index.run INFO dependencies for join_text_units_to_entity_ids: ['create_final_entities']
+18:51:13,949 graphrag.index.run INFO read table from storage: create_final_entities.parquet
+18:51:14,13 datashaper.workflow.workflow INFO executing verb select
+18:51:14,36 datashaper.workflow.workflow INFO executing verb unroll
+18:51:14,62 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:51:14,89 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table join_text_units_to_entity_ids.parquet
+18:51:14,273 graphrag.index.run INFO Running workflow: create_final_relationships...
+18:51:14,274 graphrag.index.run INFO dependencies for create_final_relationships: ['create_final_nodes', 'create_base_entity_graph']
+18:51:14,274 graphrag.index.run INFO read table from storage: create_final_nodes.parquet
+18:51:14,283 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+18:51:14,343 datashaper.workflow.workflow INFO executing verb unpack_graph
+18:51:14,369 datashaper.workflow.workflow INFO executing verb filter
+18:51:14,422 datashaper.workflow.workflow INFO executing verb rename
+18:51:14,447 datashaper.workflow.workflow INFO executing verb filter
+18:51:14,495 datashaper.workflow.workflow INFO executing verb drop
+18:51:14,518 datashaper.workflow.workflow INFO executing verb compute_edge_combined_degree
+18:51:14,545 datashaper.workflow.workflow INFO executing verb convert
+18:51:14,593 datashaper.workflow.workflow INFO executing verb convert
+18:51:14,594 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_relationships.parquet
+18:51:14,781 graphrag.index.run INFO Running workflow: join_text_units_to_relationship_ids...
+18:51:14,781 graphrag.index.run INFO dependencies for join_text_units_to_relationship_ids: ['create_final_relationships']
+18:51:14,781 graphrag.index.run INFO read table from storage: create_final_relationships.parquet
+18:51:14,849 datashaper.workflow.workflow INFO executing verb select
+18:51:14,878 datashaper.workflow.workflow INFO executing verb unroll
+18:51:14,905 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:51:14,933 datashaper.workflow.workflow INFO executing verb select
+18:51:14,935 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table join_text_units_to_relationship_ids.parquet
+18:51:15,125 graphrag.index.run INFO Running workflow: create_final_community_reports...
+18:51:15,131 graphrag.index.run INFO dependencies for create_final_community_reports: ['create_final_nodes', 'create_final_relationships']
+18:51:15,144 graphrag.index.run INFO read table from storage: create_final_nodes.parquet
+18:51:15,163 graphrag.index.run INFO read table from storage: create_final_relationships.parquet
+18:51:15,220 datashaper.workflow.workflow INFO executing verb prepare_community_reports_nodes
+18:51:15,246 datashaper.workflow.workflow INFO executing verb prepare_community_reports_edges
+18:51:15,271 datashaper.workflow.workflow INFO executing verb restore_community_hierarchy
+18:51:15,299 datashaper.workflow.workflow INFO executing verb prepare_community_reports
+18:51:15,299 graphrag.index.verbs.graph.report.prepare_community_reports INFO Number of nodes at level=0 => 28
+18:51:15,351 datashaper.workflow.workflow INFO executing verb create_community_reports
+18:51:35,568 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:35,572 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 20.212999999988824. input_tokens=2521, output_tokens=728
+18:51:35,665 httpx INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+18:51:35,669 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 20.305000000007567. input_tokens=2392, output_tokens=695
+18:51:35,703 datashaper.workflow.workflow INFO executing verb window
+18:51:35,707 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_community_reports.parquet
+18:51:35,912 graphrag.index.run INFO Running workflow: create_final_text_units...
+18:51:35,918 graphrag.index.run INFO dependencies for create_final_text_units: ['join_text_units_to_relationship_ids', 'join_text_units_to_entity_ids', 'create_base_text_units']
+18:51:35,948 graphrag.index.run INFO read table from storage: join_text_units_to_relationship_ids.parquet
+18:51:35,954 graphrag.index.run INFO read table from storage: join_text_units_to_entity_ids.parquet
+18:51:35,957 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+18:51:36,20 datashaper.workflow.workflow INFO executing verb select
+18:51:36,48 datashaper.workflow.workflow INFO executing verb rename
+18:51:36,75 datashaper.workflow.workflow INFO executing verb join
+18:51:36,112 datashaper.workflow.workflow INFO executing verb join
+18:51:36,144 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:51:36,175 datashaper.workflow.workflow INFO executing verb select
+18:51:36,177 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_text_units.parquet
+18:51:36,375 graphrag.index.run INFO Running workflow: create_base_documents...
+18:51:36,375 graphrag.index.run INFO dependencies for create_base_documents: ['create_final_text_units']
+18:51:36,376 graphrag.index.run INFO read table from storage: create_final_text_units.parquet
+18:51:36,459 datashaper.workflow.workflow INFO executing verb unroll
+18:51:36,492 datashaper.workflow.workflow INFO executing verb select
+18:51:36,519 datashaper.workflow.workflow INFO executing verb rename
+18:51:36,548 datashaper.workflow.workflow INFO executing verb join
+18:51:36,579 datashaper.workflow.workflow INFO executing verb aggregate_override
+18:51:36,609 datashaper.workflow.workflow INFO executing verb join
+18:51:36,652 datashaper.workflow.workflow INFO executing verb rename
+18:51:36,681 datashaper.workflow.workflow INFO executing verb convert
+18:51:36,752 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_documents.parquet
+18:51:36,965 graphrag.index.run INFO Running workflow: create_final_documents...
+18:51:36,971 graphrag.index.run INFO dependencies for create_final_documents: ['create_base_documents']
+18:51:36,996 graphrag.index.run INFO read table from storage: create_base_documents.parquet
+18:51:37,81 datashaper.workflow.workflow INFO executing verb rename
+18:51:37,83 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_documents.parquet
