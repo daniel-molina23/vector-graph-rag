@@ -136,7 +136,7 @@ def run_indexing(subfolder):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run GraphRAG indexing pipeline.')
-    parser.add_argument('subfolder', type=str, help='Subfolder to index (e.g., general, level_a, admin)')
+    parser.add_argument('subfolder', type=str, help='Subfolder to index (e.g., general, level_q, admin)')
     
     args = parser.parse_args()
     run_indexing(args.subfolder)
