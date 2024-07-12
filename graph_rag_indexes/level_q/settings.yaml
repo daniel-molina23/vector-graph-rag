@@ -80,7 +80,22 @@ entity_extraction:
   ## parallelization: override the global parallelization settings for this task
   ## async_mode: override the global async_mode settings for this task
   prompt: "prompts/entity_extraction.txt"
-  entity_types: [animal, tool, activity, location]
+  entity_types: [
+      animal, 
+      tool, 
+      activity, 
+      location, 
+      training_schedule, 
+      diet, 
+      trainer, 
+      power,
+      trainer_requirements,
+      training_frequency,
+      sleep_schedule,
+      harnessing_power,
+      trainer_preparation,
+      capture_manual,
+    ]
   max_gleanings: 0
 
 summarize_descriptions:
