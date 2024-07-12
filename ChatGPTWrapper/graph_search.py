@@ -111,7 +111,6 @@ def create_search_engine(context_builder, token_encoder, search_type="global"):
         map_llm_params = {
             "max_tokens": 1000,
             "temperature": 0.0,
-            "response_format": {"type": "json_object"},
         }
 
         reduce_llm_params = {
@@ -127,7 +126,7 @@ def create_search_engine(context_builder, token_encoder, search_type="global"):
             map_llm_params=map_llm_params,
             reduce_llm_params=reduce_llm_params,
             allow_general_knowledge=False,
-            json_mode=True,
+            json_mode=False,
             context_builder_params=context_builder_params,
             concurrent_coroutines=32,
             response_type="multiple paragraphs",
