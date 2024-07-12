@@ -120,6 +120,9 @@ def preprocess_files(old_file_dir, new_file_dir):
 
 def run_indexing(subfolder):
     new_file_dir = os.path.join(subfolder, 'input') # final directory to store postprocessed files
+    # if new_file_dir does not exist, create it
+    if not os.path.exists(new_file_dir):
+        os.makedirs(new_file_dir)
     old_file_dir = os.path.join(subfolder, 'temp_input') # temp directory to store preprocessed files
     
     # Preprocess files
