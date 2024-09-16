@@ -83,6 +83,7 @@ entity_extraction:
   entity_types:
     [
       diet,
+      food,
       training_schedule,
       training_location,
       trainer_requirements,
